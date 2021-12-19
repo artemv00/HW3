@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.9]
+        python-version: [3.5]
 
     steps:
     - uses: actions/checkout@v2
@@ -26,4 +26,10 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT }}
         token: ${{ secrets.TELEGRAM_BOT }}
         message: |
-            123 : ${{ github.workflow }}
+            Всё OK
+            {{ github.workflow }}
+            {{ commit.ref }}
+            {{ commit.sha }}
+            {{ github.event.path }}
+            {{ github.workspace }}
+  
