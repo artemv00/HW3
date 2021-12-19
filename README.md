@@ -1,3 +1,4 @@
+[workflow](https://github.com/artemv00/hw3/actions/workflows/my-program-test.yml/badge.svg)
 # Technical Task 3
 ## How does it work?
 This program opens **numbers.txt** (you may change the file in code), then it readы all numbers in the file and returns:
