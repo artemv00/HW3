@@ -26,4 +26,10 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT }}
         token: ${{ secrets.TELEGRAM_BOT }}
         message: |
+        
             Commit message: ${{ github.event.pull_request.title }}
+            The ${{ github.event_name }} event triggered second step.
+            show the github varable ref: ${{ github.ref }}
+            show the github varable commit: ${{ github.sha }}
+            show the github varable ref: {{ commit.ref }}
+            show the github varable commit: {{ commit.sha }}
