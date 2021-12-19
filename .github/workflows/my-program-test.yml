@@ -24,6 +24,7 @@ jobs:
         run: python -m unittest discover .
     - name: TG Notification
       uses: appleboy/telegram-action@master
+      if: always()
       with:
         to: ${{ secrets.TELEGRAM_CHAT }}
         token: ${{ secrets.TELEGRAM_BOT }}
