@@ -25,16 +25,16 @@ jobs:
         
     - name: TG Notification True
       uses: appleboy/telegram-action@master
-      if: ${{ steps.runtest.outputs.stderr }}
+      if: always()
       with:
         to: ${{ secrets.TELEGRAM_CHAT }}
         token: ${{ secrets.TELEGRAM_BOT }}
         message: |
-        Output : ${{ steps.runtest.outputs.stderr }}
-          
+          Output : ${{ steps.runtest.outputs.stderr }}
+
     - name: TG Notification False
       uses: appleboy/telegram-action@master
-      if: ${{ steps.runtest.outputs.stdout }}
+      if: ${{ !steps.runtest.outputs.stdout }}
       with:
         to: ${{ secrets.TELEGRAM_CHAT }}
         token: ${{ secrets.TELEGRAM_BOT }}
