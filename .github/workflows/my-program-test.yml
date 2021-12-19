@@ -20,7 +20,7 @@ jobs:
     - name: Run Test
       run: python -m unittest discover .
 
-    - name:TG Notification
+    - name: TG Notification
       uses: "appleboy/telegram-action@master"
       with:
         to: ${{ secrets.TELEGRAM_CHAT }}
