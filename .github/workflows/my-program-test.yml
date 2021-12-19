@@ -18,7 +18,10 @@ jobs:
         python-version: ${{ matrix.python-version }}
         architecture: x64
     - name: Run Test
-      run: python -m -b unittest discover .
+      uses: mathiasvr/command-output@v1
+      id: runtest
+      with:
+        run: python -m unittest discover .
 
     - name: TG Notification
       uses: appleboy/telegram-action@master
@@ -26,10 +29,5 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT }}
         token: ${{ secrets.TELEGRAM_BOT }}
         message: |
-          The ${{ github.event_name }} event triggered second step.
-          show the github variable ref: ${{ github.ref }}
-          show the github variable commit: ${{ github.sha }}
-          show the github variable ref: {{ commit.ref }}
-          show the github variable commit: {{ commit.sha }}
-          Commit Message: ${{ github.event.head_commit.message }}
+          AAAAAAA : ${{ steps.today.outputs.stdout }}
 
