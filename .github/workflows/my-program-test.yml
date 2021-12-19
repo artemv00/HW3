@@ -39,4 +39,5 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT }}
         token: ${{ secrets.TELEGRAM_BOT }}
         message: |
+          Commit message: ${{ github.event.commits[0].message }}
           Все ОК
