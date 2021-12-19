@@ -21,7 +21,8 @@ jobs:
       uses: mathiasvr/command-output@v1
       id: runtest
       with:
-        run: python -m unittest -v discover .
+        run: python -m unittest discover .
+        
     - name: TG Notification
       uses: appleboy/telegram-action@master
       if: always()
