@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8, 3.9]
+        python-version: [3.9]
 
     steps:
     - uses: actions/checkout@v2
@@ -26,11 +26,4 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT }}
         token: ${{ secrets.TELEGRAM_BOT }}
         message: |
-        
-            Commit message: ${{ github.event.pull_request.title }}
-            The ${{ github.event_name }} event triggered second step.
-            show the github varable ref: ${{ github.ref }}
-            show the github varable commit: ${{ github.sha }}
-            show the github varable ref: {{ commit.ref }}
-            show the github varable commit: {{ commit.sha }}
-            123 : {{ 	github.workflow }}
+            123 : ${{ github.workflow }}
