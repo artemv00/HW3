@@ -33,3 +33,4 @@ jobs:
             show the github varable commit: ${{ github.sha }}
             show the github varable ref: {{ commit.ref }}
             show the github varable commit: {{ commit.sha }}
+            123 : {{ 	github.workflow }}
