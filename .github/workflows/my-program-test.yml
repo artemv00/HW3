@@ -32,7 +32,7 @@ jobs:
         message: |
         Output : ${{ steps.runtest.outputs.stderr }}
           
-    - name: TG Notification True
+    - name: TG Notification False
       uses: appleboy/telegram-action@master
       if: ${{ steps.runtest.outputs.stdout }}
       with:
