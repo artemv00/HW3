@@ -32,4 +32,23 @@ jobs:
             {{ commit.sha }}
             {{ github.event.path }}
             {{ github.workspace }}
+            
+notification:
+   runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.5]
   
+    steps:
+    - name: TG Notification
+      uses: appleboy/telegram-action@master
+      with:
+        to: ${{ secrets.TELEGRAM_CHAT }}
+        token: ${{ secrets.TELEGRAM_BOT }}
+        message: |
+            Всё OK
+            {{ github.workflow }}
+            {{ commit.ref }}
+            {{ commit.sha }}
+            {{ github.event.path }}
+            {{ github.workspace }}
