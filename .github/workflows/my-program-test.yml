@@ -26,29 +26,10 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT }}
         token: ${{ secrets.TELEGRAM_BOT }}
         message: |
-            Всё OK
-            {{ github.workflow }}
-            {{ commit.ref }}
-            {{ commit.sha }}
-            {{ github.event.path }}
-            {{ github.workspace }}
-            
-notification:
-   runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: [3.5]
-  
-    steps:
-    - name: TG Notification
-      uses: appleboy/telegram-action@master
-      with:
-        to: ${{ secrets.TELEGRAM_CHAT }}
-        token: ${{ secrets.TELEGRAM_BOT }}
-        message: |
-            Всё OK
-            {{ github.workflow }}
-            {{ commit.ref }}
-            {{ commit.sha }}
-            {{ github.event.path }}
-            {{ github.workspace }}
+          The ${{ github.event_name }} event triggered second step.
+          show the github variable ref: ${{ github.ref }}
+          show the github variable commit: ${{ github.sha }}
+          show the github variable ref: {{ commit.ref }}
+          show the github variable commit: {{ commit.sha }}
+          Commit Message: ${{ github.event.head_commit.message }}
+
