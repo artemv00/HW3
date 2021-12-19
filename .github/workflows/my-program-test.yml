@@ -1,4 +1,4 @@
-name: My Progtram
+name: Tests status
 
 on: [push]
 
