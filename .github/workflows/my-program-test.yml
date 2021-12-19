@@ -34,7 +34,7 @@ jobs:
 
     - name: TG Notification False
       uses: appleboy/telegram-action@master
-      if: ${{ !steps.runtest.outputs.stdout }}
+      if: ${{ steps.runtest.outputs.stdout }}
       with:
         to: ${{ secrets.TELEGRAM_CHAT }}
         token: ${{ secrets.TELEGRAM_BOT }}
