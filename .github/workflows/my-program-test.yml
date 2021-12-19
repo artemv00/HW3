@@ -29,5 +29,5 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT }}
         token: ${{ secrets.TELEGRAM_BOT }}
         message: |
-          AAAAAAA : ${{ steps.runtest.outputs.stdout }}
+          Output : ${{ steps.runtest.outputs.stdout }}
 
