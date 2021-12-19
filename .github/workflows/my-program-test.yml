@@ -1,6 +1,6 @@
 name: Tests status
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   test:
@@ -22,7 +22,6 @@ jobs:
       id: runtest
       with:
         run: python -m unittest discover .
-
     - name: TG Notification
       uses: appleboy/telegram-action@master
       with:
