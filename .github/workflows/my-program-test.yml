@@ -26,5 +26,4 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT }}
         token: ${{ secrets.TELEGRAM_BOT }}
         message: |
-        
-              Commit message: ${{ commit.sha }}
+            Commit message: ${{ github.event.pull_request.title }}
